@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jump to issue : Settings</title>
+  <style>
+    input {
+      width: 250px;
+      margin-top: 5px;
+    }
+    div {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Jump to issue : Settings</h1>
+
+<div>
+  Base Url:
+  <input type="text" id="base_url" placeholder="https://github.com/org/repo/issues/">
+</div>
+<div>
+  Matching pattern (option):
+  <input type="text" id="matching_pattern" placeholder="(\d+).*">
+</div>
+
+<div id="status"></div>
+<button id="save">Save</button>
+
+<script src="options.js"></script>
+</body>
+</html>

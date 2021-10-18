@@ -1,0 +1,12 @@
+{
+  "name": "Jump to issue",
+  "description": "This is a chrome extension that infers the issue URL from the branch name on GitHub pull request page.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "permissions": ["scripting", "tabs", "storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png",
+    "options_page": "options.html"
+  }
+}
