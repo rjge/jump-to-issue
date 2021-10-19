@@ -1,14 +1,14 @@
-let goToUrl = "chrome://newtab";
+var goToUrl = "chrome://newtab";
 
 chrome.storage.sync.get({
   baseUrl: "https://github.com/org/repo/issues/",
-  matchingPattern: "(\\d+).*"
+  matchingPattern: "([0-9]+).*"
 }, function(items) {
-  let baseUrl = items.baseUrl;
-  let patternString = items.matchingPattern;
+  var baseUrl = items.baseUrl;
+  var patternString = items.matchingPattern;
 
   if (baseUrl != null && patternString != null) {
-    chrome.tabs.query({ active: true }, function(tabs) {
+    chrome.tabs.query({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }, function(tabs) {
       var tab = tabs[0];
 
       if (tab.url.startsWith("https://github.com/")) {
@@ -34,8 +34,8 @@ function generateUrl(baseUrl, patternString) {
   var url = "";
 
   if (headRefElement != null) {
-    let branchName = headRefElement.innerHTML;
-    let reg = branchName.match(matchingPattern)
+    var branchName = headRefElement.innerHTML;
+    var reg = branchName.match(matchingPattern)
     url = baseUrl + reg[1];
   }
 

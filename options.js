@@ -20,7 +20,7 @@ function save_options() {
 function restore_options() {
   chrome.storage.sync.get({
     baseUrl: "https://github.com/org/repo/issues/",
-    matchingPattern: "(\\d+).*"
+    matchingPattern: "([0-9]+).*"
   }, function(items) {
     document.getElementById("base_url").value = items.baseUrl;
     document.getElementById("matching_pattern").value = items.matchingPattern;
