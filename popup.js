@@ -30,7 +30,7 @@ chrome.storage.sync.get({
 
 function generateUrl(baseUrl, patternString) {
   var matchingPattern = new RegExp(patternString);
-  var headRefElement = document.querySelector(".head-ref > a > span");
+  var headRefElement = document.querySelector('[class*="prc-PageHeader-PageHeader-"]');
   var url = "";
 
   if (headRefElement != null) {
